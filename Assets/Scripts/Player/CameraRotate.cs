@@ -4,7 +4,7 @@ public class CameraRotate : MonoBehaviour
 {
     public Vector2 lookAmt;
     public float rotateSpeed;
-    public float currentRot;
+    private float currentRot;
 
     void Update()
     {
@@ -14,7 +14,7 @@ public class CameraRotate : MonoBehaviour
     private void FixedUpdate()
     {
         currentRot -= lookAmt.y * rotateSpeed * Time.deltaTime;
-        currentRot = Mathf.Clamp(currentRot, -80, 80);
+        currentRot = Mathf.Clamp(currentRot, -90, 90);
         transform.localRotation = Quaternion.Euler(currentRot, 0, 0);
     }
 }
