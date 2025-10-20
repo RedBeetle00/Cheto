@@ -9,5 +9,6 @@ public class Animation : MonoBehaviour
     void Update()
     {
         animator.SetFloat("ForwardMove", playerMove.moveAmt.y);
+        animator.SetFloat("RightMove", playerMove.moveAmt.x);
     }
 }
