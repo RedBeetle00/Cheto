@@ -3,12 +3,14 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
-    public static InputAction inputMove;
-    public static InputAction inputLook;
+    public InputAction inputMove;
+    public InputAction inputLook;
+    public InputAction inputJump;
 
     void Awake()
     {
         inputMove = InputSystem.actions.FindAction("Move");
         inputLook = InputSystem.actions.FindAction("Look");
+        inputJump = InputSystem.actions.FindAction("Jump");
     }
 }

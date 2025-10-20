@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    private PlayerInput playerInput;
+    [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private GroundCheck groundCheck;
     public Rigidbody rb;
     public Vector2 moveAmt;
     public Vector2 lookAmt;
@@ -13,14 +14,21 @@ public class PlayerMove : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        playerInput = GetComponent<PlayerInput>();
+        groundCheck = GetComponentInChildren<GroundCheck>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
     void Update()
     {
-        moveAmt = PlayerInput.inputMove.ReadValue<Vector2>();
-        lookAmt = PlayerInput.inputLook.ReadValue<Vector2>();
+        moveAmt = playerInput.inputMove.ReadValue<Vector2>();
+        lookAmt = playerInput.inputLook.ReadValue<Vector2>();
+        
+        if (playerInput.inputJump.WasPressedThisFrame() && groundCheck.isGrounded)
+        {
+            Jump();
+        }
     }
 
     private void FixedUpdate()
@@ -40,5 +48,10 @@ public class PlayerMove : MonoBehaviour
         float rotationAmount = lookAmt.x * rotateSpeed * Time.deltaTime;
         Quaternion deltaRotation = Quaternion.Euler(0, rotationAmount, 0);
         rb.MoveRotation(rb.rotation * deltaRotation);
+    }
+
+    private void Jump()
+    {
+        rb.AddForce(new Vector3(0, 5f, 0), ForceMode.Impulse);
     }
 }

@@ -1,14 +1,22 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CameraRotate : MonoBehaviour
 {
+    [SerializeField] private PlayerInput playerInput;
     public Vector2 lookAmt;
+
     public float rotateSpeed;
     private float currentRot;
 
+    private void Awake()
+    {
+        playerInput = GetComponentInParent<PlayerInput>();
+    }
+
     void Update()
     {
-        lookAmt = PlayerInput.inputLook.ReadValue<Vector2>();
+        lookAmt = playerInput.inputLook.ReadValue<Vector2>();
     }
 
     private void FixedUpdate()
