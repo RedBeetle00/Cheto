@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraRotate
   lookAmt: {x: 0, y: 0}
-  rotateSpeed: 10
+  rotateSpeed: 20
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
