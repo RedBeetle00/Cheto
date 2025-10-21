@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class TreeScript : MonoBehaviour
 {
+    public GameObject player;
     public PlayerAttack playerAttack;
-    public GameObject weapon;
     public GameObject tree;
-    void Start()
+    private void Start()
     {
-        weapon = GameObject.FindWithTag("Weapon");
-        tree = GameObject.Find("Statuia");
+        player = GameObject.FindWithTag("Player");
+        tree = this.gameObject;
+        playerAttack = player.GetComponent<PlayerAttack>();
         
     }
 

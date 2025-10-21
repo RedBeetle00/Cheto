@@ -2,8 +2,16 @@ using UnityEngine;
 
 public class Animation : MonoBehaviour
 {
+    public GameObject player;
     public PlayerMove playerMove;
     public Animator animator;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerMove = GetComponentInParent<PlayerMove>();
+        animator = player.GetComponentInChildren<Animator>();
+    }
 
     void Update()
     {

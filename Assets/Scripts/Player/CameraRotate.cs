@@ -2,11 +2,11 @@
 
 public class CameraRotate : MonoBehaviour
 {
-    [SerializeField] private PlayerInput playerInput;
+    public PlayerInput playerInput;
     public Vector2 lookAmt;
 
     public float rotateSpeed;
-    private float currentRot;
+    public float currentRot;
 
     private void Awake()
     {

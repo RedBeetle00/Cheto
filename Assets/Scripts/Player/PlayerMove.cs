@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    private PlayerInput playerInput;
-    private GroundCheck groundCheck;
-    private Rigidbody rb;
+    public PlayerInput playerInput;
+    public GroundCheck groundCheck;
+    public Rigidbody rb;
 
     public Vector2 moveAmt;
     public Vector2 lookAmt;
