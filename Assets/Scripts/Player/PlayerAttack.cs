@@ -3,14 +3,14 @@
 public class PlayerAttack : MonoBehaviour
 {
     private PlayerInput playerInput;
-    private GameObject weapon;
+    //private GameObject weapon;
     public Animator animator;
 
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
         //animator = GetComponentInChildren<Animator>(); - Не придумал как сделать, чтобы он искал именно аниматор из объекта с тегом weapon
-        weapon = GameObject.FindWithTag("Weapon");
+        //weapon = GameObject.FindWithTag("Weapon");
     }
 
     private void Update()

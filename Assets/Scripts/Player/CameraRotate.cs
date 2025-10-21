@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraRotate : MonoBehaviour
 {
@@ -20,8 +20,8 @@ public class CameraRotate : MonoBehaviour
 
     private void FixedUpdate()
     {
-        currentRot -= lookAmt.y * rotateSpeed * Time.deltaTime;
-        currentRot = Mathf.Clamp(currentRot, -90, 90);
-        transform.localRotation = Quaternion.Euler(currentRot, 0, 0);
+        currentRot -= lookAmt.y * rotateSpeed * Time.deltaTime; // Принимает ввод игрока
+        currentRot = Mathf.Clamp(currentRot, -90, 90); // Ограничивает этот ввод
+        transform.localRotation = Quaternion.Euler(currentRot, 0, 0); // Вращает камеру
     }
 }
