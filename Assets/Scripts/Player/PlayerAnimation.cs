@@ -6,7 +6,7 @@ public class Animation : MonoBehaviour
     public PlayerMove playerMove;
     public Animator animator;
 
-    private void Start()
+    private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerMove = GetComponentInParent<PlayerMove>();

@@ -5,7 +5,7 @@ public class TreeScript : MonoBehaviour
     public GameObject player;
     public PlayerAttack playerAttack;
     public GameObject tree;
-    private void Start()
+    private void Awake()
     {
         player = GameObject.FindWithTag("Player");
         tree = this.gameObject;

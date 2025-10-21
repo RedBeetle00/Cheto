@@ -6,7 +6,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject weapon;
     public Animator animator;
 
-    private void Start()
+    private void Awake()
     {
         weapon = GameObject.FindWithTag("Weapon");
         playerInput = GetComponent<PlayerInput>();
