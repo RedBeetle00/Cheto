@@ -10,7 +10,6 @@ public class Animation : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerMove = GetComponentInParent<PlayerMove>();
-        animator = player.GetComponentInChildren<Animator>();
     }
 
     void Update()

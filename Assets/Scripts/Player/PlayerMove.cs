@@ -26,16 +26,12 @@ public class PlayerMove : MonoBehaviour
         moveAmt = playerInput.inputMove.ReadValue<Vector2>();
         lookAmt = playerInput.inputLook.ReadValue<Vector2>();
         
+        Walking();
+        Rotating();
         if (playerInput.inputJump.WasPressedThisFrame() && groundCheck.isGrounded)
         {
             Jump();
         }
-    }
-
-    private void FixedUpdate()
-    {
-        Walking();
-        Rotating();
     }
 
     private void Walking()
