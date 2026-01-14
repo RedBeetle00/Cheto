@@ -6,7 +6,7 @@ public class PlayerInput : MonoBehaviour
     public InputAction inputMove;
     public InputAction inputLook;
     public InputAction inputJump;
-    public InputAction inputAttack;
+    public InputAction inputShoot;
     public InputAction inputInteract;
     public InputAction inputCrouch;
     public InputAction inputSprint;
@@ -16,7 +16,7 @@ public class PlayerInput : MonoBehaviour
         inputMove = InputSystem.actions.FindAction("Move");
         inputLook = InputSystem.actions.FindAction("Look");
         inputJump = InputSystem.actions.FindAction("Jump");
-        inputAttack = InputSystem.actions.FindAction("Attack");
+        inputShoot = InputSystem.actions.FindAction("Shoot");
         inputInteract = InputSystem.actions.FindAction("Interact");
         inputCrouch = InputSystem.actions.FindAction("Crouch");
         inputSprint = InputSystem.actions.FindAction("Sprint");
